@@ -141,9 +141,15 @@ public double scoreText(String cipherText) {
 	}//end class 
 ```
 **__**
-
 ![](Images/7.png)
 **__**
 ```
 java -cp ./playfair.jar ie.gmit.sw.ai.CipherBreaker
 ```
+# **_References_**
+- https://github.com/northgc/playfair/blob/master/playfair.java
+- https://github.com/ugljesas/playfair/tree/master/playfair
+- https://www.researchgate.net/publication/220615701_Breaking_Short_Playfair_Ciphers_with_the_Simulated_Annealing_Algorithm
+- https://stackoverflow.com/questions/10390254/how-do-you-write-a-string-to-a-text-file/10390351#10390351
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
