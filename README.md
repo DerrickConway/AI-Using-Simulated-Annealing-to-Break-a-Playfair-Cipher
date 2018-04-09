@@ -119,7 +119,8 @@ public class SimulatedAnnealing {
 ![](Images/6.png)
 **__**
 
-**_Code to measure the fitness_**
+# **_Code to measure the fitness_**
+[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
 ```Java
 public double scoreText(String cipherText) {
 		double score = 0;
