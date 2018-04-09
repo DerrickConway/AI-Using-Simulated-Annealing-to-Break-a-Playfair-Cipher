@@ -1,0 +1,136 @@
+package ie.gmit.sw.ai;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+/*
+ * Author: Alan Heanue - G00318763
+ * GitHub link  https://github.com/heanuea/AI-Using-Simulated-Annealing-to-Break-a-Playfair-Cipher.git
+ */
+
+/*
+* This class is the Main method i.e. Run the program
+*/
+public class CipherBreaker {
+	public static void main(String[] args) throws Exception, Throwable {
+		
+		@SuppressWarnings("resource")
+		Scanner console = new Scanner(System.in);
+		boolean end = false;
+		int choice = 0;
+		int transitions = 60000;
+		String filename = "4grams.txt";
+		
+		do 
+		{
+			System.out.println("============== Playfair Cipher =================");
+			System.out.println("1. Decrypt from file->>");
+			System.out.println("2. Decrypt ->>");
+			System.out.println("3. Exit-->>");
+			System.out.print("Choice: ");
+			choice = console.nextInt();
+			
+			switch(choice) {
+				case 1:
+					
+					System.out.println("Debug mode? [y/n]");
+					boolean debug = false;
+					String opt = console.next();
+					if(opt.equalsIgnoreCase("y")) debug = true;
+					else if(opt.equalsIgnoreCase("n")) debug = false;
+					else debug = false;
+					
+					System.out.println("->Enter FILENAME<-: ");
+					filename = console.next();
+					filename += ".txt";
+					
+					BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(new File(filename))));
+					StringBuilder sb = new StringBuilder();
+					String line;
+					
+					while((line = br.readLine()) != null) {
+						sb.append(line.toUpperCase().replaceAll("\\W", "").replace("J", ""));
+					}
+					
+					System.out.print("Do you know the key? [y/n]: ");
+					console.nextLine();
+					String knowKey = console.nextLine();
+					if(knowKey.equalsIgnoreCase("y")) {
+						System.out.print("Enter key: ");
+						String key = console.nextLine();
+						Playfair playfair = new Playfair();
+						playfair.setCipherText(sb.toString());
+						System.out.println("\nDecrypted message: " + playfair.decrypt(key) + "\n");
+						break;
+					}
+					
+					
+					else{
+						System.out.println("\nPlease wait ...");
+						int OPTIMAL_TEMP = (int)((10 + 0.087 * (sb.toString().length() - 84)));
+						int BEST_TEMP = OPTIMAL_TEMP / 3;
+						long startTime = System.currentTimeMillis();
+						SimulatedAnnealing sa = new SimulatedAnnealing(BEST_TEMP, transitions, sb.toString());
+						sa.annealing(debug);
+						System.out.println("\nExecution time: " + (System.currentTimeMillis() - (startTime)/1000) + "s");	
+						
+						System.out.println("\nTry again?: [y/n]");
+						String again = console.next();
+						if(again.equalsIgnoreCase("y")) {
+							System.out.println("\nPlease wait ...");
+							sa.annealing(debug);
+							break;
+						}
+						else if(again.equalsIgnoreCase("n")) {
+							break;
+						}
+						else {
+							break;
+						}
+					}
+					
+					
+				case 2: 
+					debug = false;
+					System.out.println("Debug mode? [y/n]");
+					opt = console.next();
+					if(opt.equalsIgnoreCase("y")) debug = true;
+					else if(opt.equalsIgnoreCase("n")) debug = false;
+					else debug = false;
+					console.nextLine();
+					
+					System.out.print("Enter encrypted text to decrypt: ");
+					String cypherText = console.nextLine();
+					
+					System.out.println("\nPlease wait...");
+					int OPTIMAL_TEMP = (int)((10 + 0.087 * (cypherText.length() - 84)));
+					int BEST_TEMP = OPTIMAL_TEMP / 3;
+					long startTime = System.currentTimeMillis();
+					SimulatedAnnealing sa = new SimulatedAnnealing(BEST_TEMP, transitions, cypherText);
+					sa.annealing(debug);
+					System.out.println("\nExecution time: " + ((System.currentTimeMillis() - startTime)/1000) + "s");	
+					System.out.println("\n Try again?: [y/n]");
+					String again = console.next();
+					if(again.equalsIgnoreCase("y")) {
+						System.out.println("\nPlease wait...");
+						sa.annealing(debug);
+						break;
+					}
+					else if(again.equalsIgnoreCase("n")) {
+						break;
+					}
+					else {
+						break;
+					}
+					
+				case 3:
+					System.out.println("Exiting..");
+					System.exit(0);
+					break;
+			}
+		}
+		while(!end);
+	}
+}
