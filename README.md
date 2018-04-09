@@ -141,3 +141,9 @@ public double scoreText(String cipherText) {
 	}//end class 
 ```
 **__**
+
+![](Images/7.png)
+**__**
+```
+java -cp ./playfair.jar ie.gmit.sw.ai.CipherBreaker
+```
