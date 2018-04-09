@@ -163,6 +163,7 @@ java -cp ./playfair.jar ie.gmit.sw.ai.CipherBreaker
     <b><a href="#----">↥ back to top</a></b>
 </div>
 <br/>
+
 # **_References_**
 - https://github.com/northgc/playfair/blob/master/playfair.java
 - https://github.com/ugljesas/playfair/tree/master/playfair
@@ -175,6 +176,6 @@ java -cp ./playfair.jar ie.gmit.sw.ai.CipherBreaker
 :octocat: :octocat: :octocat: :octocat:
 <br/>
 <div align="right">
-    <b><a href="#----">↥ back to top</a></b>
+    <b><a href="https://github.com/heanuea/AI-Using-Simulated-Annealing-to-Break-a-Playfair-Cipher">↥ back to top</a></b>
 </div>
 <br/>
