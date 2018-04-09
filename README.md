@@ -15,6 +15,12 @@
 **__**
 ![](Images/4.png)
 
+<br/>
+<div align="right">
+    <b><a href="#----">↥ back to top</a></b>
+</div>
+<br/>
+
 # **_Code For Simulated Annealing_**
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
 ```Java
@@ -119,6 +125,12 @@ public class SimulatedAnnealing {
 ![](Images/6.png)
 **__**
 
+<br/>
+<div align="right">
+    <b><a href="#----">↥ back to top</a></b>
+</div>
+<br/>
+
 # **_Code to measure the fitness_**
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)
 ```Java
@@ -146,6 +158,11 @@ public double scoreText(String cipherText) {
 ```
 java -cp ./playfair.jar ie.gmit.sw.ai.CipherBreaker
 ```
+<br/>
+<div align="right">
+    <b><a href="#----">↥ back to top</a></b>
+</div>
+<br/>
 # **_References_**
 - https://github.com/northgc/playfair/blob/master/playfair.java
 - https://github.com/ugljesas/playfair/tree/master/playfair
