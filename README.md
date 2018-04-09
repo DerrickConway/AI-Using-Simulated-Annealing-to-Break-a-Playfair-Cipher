@@ -151,5 +151,13 @@ java -cp ./playfair.jar ie.gmit.sw.ai.CipherBreaker
 - https://github.com/ugljesas/playfair/tree/master/playfair
 - https://www.researchgate.net/publication/220615701_Breaking_Short_Playfair_Ciphers_with_the_Simulated_Annealing_Algorithm
 - https://stackoverflow.com/questions/10390254/how-do-you-write-a-string-to-a-text-file/10390351#10390351
+- http://www.theprojectspot.com/tutorial-post/simulated-annealing-algorithm-for-beginners/6
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+
+:octocat: :octocat: :octocat: :octocat:
+<br/>
+<div align="right">
+    <b><a href="#----">↥ back to top</a></b>
+</div>
+<br/>
