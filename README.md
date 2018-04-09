@@ -117,3 +117,26 @@ public class SimulatedAnnealing {
 
 **__**
 ![](Images/6.png)
+**__**
+
+**_Code to measure the fitness_**
+```Java
+public double scoreText(String cipherText) {
+		double score = 0;
+		int frequency = 0;
+		
+		//loop through the cipher every 4 letters..
+		for(int i=0; i< cipherText.length() - 4; i++){
+			if(grams.get(cipherText.substring(i, i+4)) != null){
+				frequency = grams.get(cipherText.substring(i, i+4));
+			}
+			
+			else	
+			{frequency = 1;}
+			//log probability
+			score += Math.log10((double) frequency/this.getNo());
+		}//end for 
+		return score;
+	}//end class 
+```
+**__**
